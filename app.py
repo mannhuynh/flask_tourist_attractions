@@ -14,15 +14,15 @@ DEL_ACTION = "X"
 def locations(category):
   locations = visit.get_list_by_category(category)
   ## Check the request for form data and process
-  if False:
-    [(name, action)] = [(None, None)]
+  if request.method == "POST":
+    [(name, action)] = request.form.items()
 
     if action == UP_ACTION:
       visit.moveup(name)
     elif action == DEL_ACTION:
       visit.delete(name)
   ## Return the main template with variables
-  return ""
+  return render_template("locations.html", category=category, categories=categories, locations=locations)
 
 @app.route("/add_location", methods=["POST"])
 def add_location():

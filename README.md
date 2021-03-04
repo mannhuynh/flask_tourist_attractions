@@ -2,16 +2,16 @@
 
 ## All steps of installation using Git Bash on Windows
 
-### clone and change directory
+### Clone and change directory
 git clone <http_url>
 cd cloned_directory
 
-### create and activate virtual invironment
+### Create and activate virtual invironment
 python -m venv env
 source env\scripts\activate
 
-### install Flask
+### Install Flask
 pip install Flask
 
-### create requirement.txt
+### Create requirement.txt
 python -m pip freeze > requirements.txt
